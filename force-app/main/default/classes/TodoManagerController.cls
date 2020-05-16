@@ -1,7 +1,7 @@
 public with sharing class TodoManagerController {
     @AuraEnabled
     public static List<Task> getTasks() {
-        return [SELECT Id, Subject FROM Task WITH SECURITY_ENFORCED LIMIT 200];
+        return [SELECT Id, Subject FROM Task WHERE CreatedDate = TODAY WITH SECURITY_ENFORCED];
     }
 
     @AuraEnabled
