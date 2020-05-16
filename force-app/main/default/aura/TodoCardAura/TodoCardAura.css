@@ -7,8 +7,10 @@
     border: solid thin gray;
     outline: none;
 }
-.THIS .full-width {
-    width: calc(100% - 20px);
-    margin-left: 10px;
+.THIS .card-edit {
+    text-align: right;
+}
+.THIS .card-button {
+    margin-right: 10px;
     margin-bottom: 5px;
 }

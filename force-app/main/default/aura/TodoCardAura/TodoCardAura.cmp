@@ -10,8 +10,10 @@
     <aura:if isTrue="{!v.EditMode}">
         <lightning:card>
             <textarea rows="2" onchange="{!c.subjectChange}">{!v.Subject}</textarea>
-            <lightning:button class="full-width" variant="brand" label="Save" title="Save Task" onclick="{!c.handleSaveClick}" />
-            <lightning:button class="full-width" label="Cancel" title="Cancel" onclick="{!c.handleCancelClick}" />
+            <div class="card-edit">
+                <lightning:button class="card-button" label="Cancel" title="Cancel" onclick="{!c.handleCancelClick}" />
+                <lightning:button class="card-button" variant="brand" label="Save" title="Save Task" onclick="{!c.handleSaveClick}" />
+            </div>
         </lightning:card>
         <aura:set attribute="else">
             <lightning:card title="{!v.Subject}">
