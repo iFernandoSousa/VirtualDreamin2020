@@ -13,7 +13,7 @@
 
         <aura:if isTrue="{!v.HasTasks}">
             <aura:iteration items="{!v.Tasks}" var="task">
-                <c:TodoCardAura Id="{!task.Id}" EditMode="{!task.EditMode}" Subject="{!task.Subject}"></c:TodoCardAura>
+                <c:TodoCardAura TaskId="{!task.Id}" EditMode="{!task.EditMode}" Subject="{!task.Subject}"></c:TodoCardAura>
             </aura:iteration>
         </aura:if>
     </lightning:card>

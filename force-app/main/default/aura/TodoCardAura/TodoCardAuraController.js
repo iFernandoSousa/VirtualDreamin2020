@@ -15,10 +15,11 @@
     },
 
     handleSaveClick: function(component, event, helper) {
-        let id = component.get('v.Id');
+        let taskId = component.get('v.TaskId');
         let tempSubject = component.get('v.TempSubject');
+        component.set('v.EditMode', false);
         
-        helper.sendClickEvent('save', id, tempSubject);
+        helper.sendClickEvent('save', taskId, tempSubject);
     },
 
     editClick : function(component, event, helper) {
@@ -26,8 +27,8 @@
     },
 
     deleteClick : function(component, event, helper) {
-        let id = component.get('v.Id');
+        let taskId = component.get('v.TaskId');
 
-        helper.sendClickEvent('delete', id);
+        helper.sendClickEvent('delete', taskId);
     }
 })

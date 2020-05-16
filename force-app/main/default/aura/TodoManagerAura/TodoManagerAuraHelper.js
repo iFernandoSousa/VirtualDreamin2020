@@ -17,11 +17,11 @@
         $A.enqueueAction(action);
     },
     
-    saveTask: function(component, Id, Subject) {
+    saveTask: function(component, taskId, Subject) {
         let action = component.get('c.saveTask'); 
         
         action.setParams({
-            "id" : Id,
+            "id" : taskId,
             "subject" : Subject
         });
 
@@ -34,10 +34,10 @@
         $A.enqueueAction(action);
     },
 
-    deleteTask: function(component, Id) {
+    deleteTask: function(component, taskId) {
         let action = component.get('c.deleteTask'); 
         action.setParams({
-            "id" : Id,
+            "id" : taskId,
         });
         
         action.setCallback(this, function(a){

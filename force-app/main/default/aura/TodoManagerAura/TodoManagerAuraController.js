@@ -13,13 +13,13 @@
 
     handleTodoEventClick: function(component, event, helper) {
         let action = event.getParam('Action');
-        let id = event.getParam('Id');
+        let taskId = event.getParam('TaskId');
         let subject = event.getParam('Subject');
 
-        if (action == 'save') {
-            helper.saveTask(component, id, subject);
-        } else if (action == 'delete') {
-            helper.deleteTask(component, id);
+        if (action === 'save') {
+            helper.saveTask(component, taskId, subject);
+        } else if (action === 'delete') {
+            helper.deleteTask(component, taskId);
         }
     }
 })

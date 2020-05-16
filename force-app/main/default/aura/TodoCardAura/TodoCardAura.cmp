@@ -1,5 +1,5 @@
 <aura:component>
-    <aura:attribute name="Id" type="String" />
+    <aura:attribute name="TaskId" type="String" />
     <aura:attribute name="Subject" type="String" />
     <aura:attribute name="EditMode" type="Boolean" />
     <aura:attribute name="TempSubject" type="String" access="private" />

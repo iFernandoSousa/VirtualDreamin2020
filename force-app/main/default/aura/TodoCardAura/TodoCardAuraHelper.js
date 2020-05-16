@@ -1,10 +1,10 @@
 ({
-    sendClickEvent: function (action, id, subject) {
+    sendClickEvent: function (action, taskId, subject) {
         let todoEventClick = $A.get("e.c:TodoEventClick");
 
         todoEventClick.setParams({ "Action": action });
-        if (id) {
-            todoEventClick.setParams({ "Id": id });
+        if (taskId) {
+            todoEventClick.setParams({ "TaskId": taskId });
         }
         todoEventClick.setParams({ "Subject": subject });
         
