@@ -1,2 +1,14 @@
-.THIS {
+.THIS .lightning-link {
+    cursor: pointer;
+    padding: 5px;
+}
+.THIS textarea {
+    width: 100%;
+    border: solid thin gray;
+    outline: none;
+}
+.THIS .full-width {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-bottom: 5px;
 }

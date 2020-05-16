@@ -1,3 +1,25 @@
 <aura:component>
+    <aura:attribute name="Id" type="String" />
+    <aura:attribute name="Subject" type="String" />
+    <aura:attribute name="TempSubject" type="String" />
+    <aura:attribute name="EditMode" type="Boolean" />
+    <aura:registerEvent name="TodoEventClick" type="c:TodoEventClick" />
 
-</aura:component>	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.EditMode}">
+        <lightning:card>
+            <textarea value="{!v.Subject}" autocapitalize="sentences" spellcheck="default" rows="2" onchange="{!c.subjectChange}"></textarea>
+            <lightning:button class="full-width" variant="brand" label="Save" title="Save Task" onclick="{!c.handleSaveClick}" />
+            <lightning:button class="full-width" label="Cancel" title="Cancel" onclick="{!c.handleCancelClick}" />
+        </lightning:card>
+        <aura:set attribute="else">
+            <lightning:card title="{!v.Subject}">
+                <aura:set attribute="actions">
+                    <lightning:icon class="lightning-link" iconName="utility:edit" alternativeText="Delete" size="x-small" onclick="{!c.editClick}"></lightning:icon>
+                    <lightning:icon class="lightning-link" iconName="utility:recycle_bin_empty" alternativeText="Delete" size="x-small" onclick="{!c.deleteClick}"></lightning:icon>
+                </aura:set>
+            </lightning:card>
+        </aura:set>
+    </aura:if>
+</aura:component>

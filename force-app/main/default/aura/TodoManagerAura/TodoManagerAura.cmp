@@ -1,3 +1,21 @@
-<aura:component>
+<aura:component implements="flexipage:availableForAllPageTypes" controller="TodoManagerController">
+    <aura:attribute name="Title" type="String" default="Tasks"/>
+    <aura:attribute name="Tasks" type="Object" default="Object" />
+    <aura:attribute name="HasTasks" type="Boolean" default="False" />
 
-</aura:component>	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:TodoEventClick" action="{!c.handleTodoEventClick}" />
+
+    <lightning:card title="{!v.Title}">
+        <aura:set attribute="actions">
+            <lightning:icon class="lightning-link" iconName="utility:new" onclick="{!c.handlerAddNewTask}" alternativeText="New Task" size="small"></lightning:icon>
+        </aura:set>
+
+        <aura:if isTrue="{!v.HasTasks}">
+            <aura:iteration items="{!v.Tasks}" var="task">
+                <c:TodoCardAura Id="{!task.Id}" EditMode="{!task.EditMode}" Subject="{!task.Subject}"></c:TodoCardAura>
+            </aura:iteration>
+        </aura:if>
+    </lightning:card>
+
+</aura:component>
