@@ -1,0 +1,16 @@
+.lightning-link {
+    cursor: pointer;
+    padding: 5px;
+}
+textarea {
+    width: 100%;
+    border: solid thin gray;
+    outline: none;
+}
+.card-edit {
+    text-align: right;
+}
+.card-button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}

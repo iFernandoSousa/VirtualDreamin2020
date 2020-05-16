@@ -1,0 +1,20 @@
+<template>
+    <template if:true={editMode}>
+        <lightning-card>
+            <textarea rows="2" onchange={subjectChange}>{subject}</textarea>
+            <div class="card-edit">
+                <lightning-button class="card-button" label="Cancel" title="Cancel" onclick={handleCancelClick}></lightning-button>
+                <lightning-button class="card-button" variant="brand" label="Save" title="Save Task" onclick={handleSaveClick}></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:false={editMode}>
+        <lightning-card title={subject}>
+            <div slot="actions">
+                <lightning-icon class="lightning-link" icon-name="utility:edit" alternative-text="Delete" size="x-small" onclick={editClick}></lightning-icon>
+                <lightning-icon class="lightning-link" icon-name="utility:recycle_bin_empty" alternative-text="Delete" size="x-small" onclick={deleteClick}></lightning-icon>
+            </div>
+        </lightning-card>
+    </template>
+</template>

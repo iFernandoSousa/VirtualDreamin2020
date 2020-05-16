@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title={title}>
+        <div slot="actions">
+            <lightning-icon class="lightning-link" icon-name="utility:new" onclick={handlerAddNewTask} alternative-text="New Task" size="small"></lightning-icon>
+        </div>
+
+        <template if:true={hasTasks}>
+            <template for:each={tasks} for:item="task">
+                <c-todo-car-lwc key={task.Id} task-id={task.Id} edit-mode={task.EditMode} subject={task.Subject} ontodoeventclick={handleTodoEventClick}></c-todo-car-lwc>
+            </template>
+        </template>
+    </lightning-card>
+</template>
