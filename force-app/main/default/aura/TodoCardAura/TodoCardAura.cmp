@@ -1,15 +1,15 @@
 <aura:component>
     <aura:attribute name="Id" type="String" />
     <aura:attribute name="Subject" type="String" />
-    <aura:attribute name="TempSubject" type="String" />
     <aura:attribute name="EditMode" type="Boolean" />
+    <aura:attribute name="TempSubject" type="String" access="private" />
     <aura:registerEvent name="TodoEventClick" type="c:TodoEventClick" />
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <aura:if isTrue="{!v.EditMode}">
         <lightning:card>
-            <textarea value="{!v.Subject}" autocapitalize="sentences" spellcheck="default" rows="2" onchange="{!c.subjectChange}"></textarea>
+            <textarea rows="2" onchange="{!c.subjectChange}">{!v.Subject}</textarea>
             <lightning:button class="full-width" variant="brand" label="Save" title="Save Task" onclick="{!c.handleSaveClick}" />
             <lightning:button class="full-width" label="Cancel" title="Cancel" onclick="{!c.handleCancelClick}" />
         </lightning:card>
